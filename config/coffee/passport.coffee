@@ -1,6 +1,6 @@
 passport = require 'passport'
-LinedInStrategy = require('passport-linkedin-oauth2').Strategy
-User = require '../models/user'
+LinkedInStrategy = require('passport-linkedin-oauth2').Strategy
+User = require '../models/person'
 
 passport.use new LinkedInStrategy
   clientID: process.env.CLIENT_ID
