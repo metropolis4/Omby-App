@@ -1,0 +1,11 @@
+express        = require 'express'
+bodyParser     = require 'body-parser'
+mongoose       = require 'mongoose'
+session        = require 'session'
+cookieParser   = require 'cookie-parser'
+flash          = require 'flash'
+passport       = require 'passport'
+passportConfig = require './config/passport'
+mongoConfig    = require './config/mongo'
+
+indexController = require './controllers/index'

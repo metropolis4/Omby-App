@@ -1,0 +1,42 @@
+{
+  "name": "omby-app",
+  "version": "0.0.0",
+  "description": "testing OAUTH2",
+  "scripts": {
+    "start": "nodemon app.js",
+    "compile": "npm run watch-public & npm run watch-contr & npm run watch-app & npm run watch-model & npm run watch-config",
+    "watch-public": "coffee -w -o public/scripts -c public/scripts/coffee",
+    "watch-contr": "coffee -w -o controllers -c controllers/coffee",
+    "watch-app": "coffee -wc app.coffee",
+    "watch-model": "coffee -w -o models -c models/coffee",
+    "watch-config": "coffee -w -o config -c config/coffee"
+  },
+  "dependencies": {
+    "bcrypt": "^0.8.3",
+    "body-parser": "^1.12.4",
+    "coffee-script": "^1.9.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.3.5",
+    "express": "^4.12.4",
+    "express-session": "^1.11.2",
+    "gulp-coffee": "^2.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-util": "^3.0.4",
+    "jade": "^1.9.2",
+    "mongoose": "^4.0.3",
+    "passport": "^0.2.2",
+    "passport-linkedin-oauth2": "^1.2.1",
+    "passport-local": "^1.0.0",
+    "underscore": "^1.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metropolis4/Omby-app.git"
+  },
+  "author": "Matt Rich",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-uglify": "^1.2.0"
+  }
+}
