@@ -3,7 +3,7 @@ bodyParser     = require 'body-parser'
 mongoose       = require 'mongoose'
 session        = require 'express-session'
 cookieParser   = require 'cookie-parser'
-# flash          = require 'flash'
+flash          = require 'flash'
 passport       = require 'passport'
 passportConfig = require './config/passport'
 mongoConfig    = require './config/mongo'
@@ -20,7 +20,7 @@ app.use bodyParser.json()
 app.use bodyParser.urlencoded extended: false
 
 app.use cookieParser()
-# app.use flash()
+app.use flash()
 
 app.use session
   secret: 'secret'

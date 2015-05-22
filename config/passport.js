@@ -8,6 +8,16 @@
 
   User = require('../models/person');
 
+  passport.serializeUser(function(user, done) {
+    return done(null, user.id);
+  });
+
+  passport.deserializeUser(function(id, done) {
+    return User.findById(id, function(err, user) {
+      return done(err, user);
+    });
+  });
+
   passport.use(new LinkedInStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
@@ -24,5 +34,16 @@
       });
     });
   }));
+
+  passport.use(LinkedInStrategy);
+
+  module.exports = {
+    ensureAuthenticated: function(req, res, next) {
+      if (req.isAuthenticated()) {
+        next();
+      }
+      return res.redirect('/oops');
+    }
+  };
 
 }).call(this);
