@@ -3,6 +3,9 @@
   module.exports = {
     index: function(req, res) {
       return res.render('main');
+    },
+    mainPage: function(req, res) {
+      return res.render('main-page');
     }
   };
 

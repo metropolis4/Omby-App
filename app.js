@@ -38,6 +38,12 @@
 
   app.use(cookieParser());
 
+  app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false
+  }));
+
   app.use(passport.initialize());
 
   app.use(passport.session());
@@ -49,9 +55,11 @@
   }, function(req, res) {}));
 
   app.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
-    successRedirect: '/',
+    successRedirect: '/main',
     failureRedirect: '/login'
   }));
+
+  app.get('/main', indexController.mainPage);
 
   port = process.env.PORT || 5150;
 
