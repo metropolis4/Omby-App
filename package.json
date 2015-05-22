@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "testing OAUTH2",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "compile": "npm run watch-public & npm run watch-contr & npm run watch-app & npm run watch-model & npm run watch-config",
     "watch-public": "coffee -w -o public/scripts -c public/scripts/coffee",
     "watch-contr": "coffee -w -o controllers -c controllers/coffee",
