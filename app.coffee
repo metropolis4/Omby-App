@@ -1,7 +1,6 @@
 express        = require 'express'
 bodyParser     = require 'body-parser'
 mongoose       = require 'mongoose'
-session        = require 'express-session'
 cookieParser   = require 'cookie-parser'
 flash          = require 'flash'
 passport       = require 'passport'
@@ -21,11 +20,6 @@ app.use bodyParser.urlencoded extended: false
 
 app.use cookieParser()
 app.use flash()
-
-app.use session
-  secret: 'secret'
-  resave: false
-  saveUninitialized: false
 
 app.use passport.initialize()
 app.use passport.session()
