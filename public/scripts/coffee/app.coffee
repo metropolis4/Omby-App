@@ -1,1 +1,1 @@
-angular.module 'ombApp', []
+angular.module 'ombApp', ['ngRoute','ngResource','ui.bootstrap']
